@@ -1,11 +1,11 @@
 
 function! accel#create_package(name)
-	let package = { "name" : a:name }
+	let package = { "__name__" : a:name }
 	function! package.__func__(func) dict
-		let self[a:func] = function(self.name."#".a:func)
+		let self[a:func] = function(self.__name__."#".a:func)
 	endfunction
 	function! package.__constant__(constant) dict
-		let self[a:constant] = function(self.name."#".a:constant)
+		let self[a:constant] = function(self.__name__."#".a:constant)
 	endfunction
 	return package
 endfunction
