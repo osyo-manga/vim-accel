@@ -20,6 +20,12 @@ function! accel#assert(success, ...)
 endfunction
 call s:package.__func__("assert")
 
+
+let accel#false = 0
+call s:package.__constant__("false")
+
+
+
 let accel#accel = s:package
 
 
