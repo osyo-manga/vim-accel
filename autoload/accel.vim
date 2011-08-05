@@ -11,7 +11,7 @@ function! accel#create_package(name)
 endfunction
 
 let s:package = accel#create_package("accel")
-call s:package.__func__("crete_func_table")
+call s:package.__func__("create_package")
 
 function! accel#assert(success, ...)
 	if !a:success
