@@ -1,6 +1,11 @@
 
 let s:package = accel#create_package("accel#test")
-let s:f = accel#functional#functional
+
+function! accel#test#test()
+	return deepcopy(s:package)
+endfunction
+
+let s:f = accel#functional#functional()
 
 function! s:check_impl(is_success, msg, failed_msg)
 	if a:is_success
@@ -79,8 +84,5 @@ function! accel#test#check_exception_not(func, msg)
 	call s:check_impl(is_success, "check_exception:".failed_msg.":".a:msg, a:func)
 endfunction
 let s:package.__func__("check_exception_not")
-
-
-let accel#test#test = s:package
 
 

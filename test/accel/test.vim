@@ -1,5 +1,5 @@
 
-let test = accel#test#test
+let test = accel#test#test()
 
 call test.check    (1 == 1, "check")
 call test.check_not(1 != 1, "check_not")

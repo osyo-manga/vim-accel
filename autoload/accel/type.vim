@@ -2,6 +2,10 @@
 
 let s:package = accel#create_package("accel#type")
 
+function! accel#type#type()
+	return deepcopy(s:package)
+endfunction
+
 
 function! accel#type#name(value)
 	let s:typenames = {
@@ -51,8 +55,5 @@ function! accel#type#is_dictionary(value)
 	return type({}) == type(a:value)
 endfunction
 call s:package.__func__("is_dictionary")
-
-
-let accel#type#type = s:package
 
 

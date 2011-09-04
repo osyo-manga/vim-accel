@@ -1,11 +1,17 @@
 
-let s:type = accel#type#type
+let s:type = accel#type#type()
 
 let s:package = accel#create_package("accel#functional")
+
+function! accel#functional#functional()
+	return deepcopy(s:package)
+endfunction
+
 
 function! s:applicable(func)
 	return s:type.is_dictionary(a:func) && has_key(a:func, "apply")
 endfunction
+
 
 function! accel#functional#apply(func,...)
 	if s:applicable(a:func)
@@ -126,9 +132,6 @@ function! accel#functional#function(func)
 	return func
 endfunction
 call s:package.__func__("function")
-
-
-let accel#functional#functional = s:package
 
 
 

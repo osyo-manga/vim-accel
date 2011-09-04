@@ -1,6 +1,6 @@
 
-let f    = accel#functional#functional
-let test = accel#test#test
+let f    = accel#functional#functional()
+let test = accel#test#test()
 
 function! Plus(a, b)
 	return a:a + a:b

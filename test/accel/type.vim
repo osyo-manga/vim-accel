@@ -1,6 +1,6 @@
 
-let test = accel#test#test
-let type = accel#type#type
+let test = accel#test#test()
+let type = accel#type#type()
 
 call test.check(type.is_int(10), "is_int1")
 call test.check_not(type.is_int(""), "is_int2")
